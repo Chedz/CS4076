@@ -14,14 +14,19 @@ ZorkUL::ZorkUL() {
 }
 
 void ZorkUL::createRooms()  {
-    Room *a, *b, *c, *d, *e, *f, *g, *h; //, *i, *j;
+    Room *a, *b, *c, *d, *e, *f, *g, *h; 
 
 	a = new Room("Docking Hatch");
-       a->addItem(new Item("x", 1, 11));
-       a->addItem(new Item("y", 2, 22));
+       a->addItem(new Item("Hose", 200));
+       a->addItem(new Item("Sarahs Space Suit",500));
+       a->addItem(new Item("Jacks Space Suit", 500));
+       a->addItem(new Item("Adams Space Suit", 500));
+       a->addItem(new Item("Clamps", 100));
+       a->addItem(new Item("Keycard", 5));
+	
         b = new Room("Kitchen");
-       b->addItem(new Item("xx", 3, 33));
-       b->addItem(new Item("yy", 4, 44));
+       b->addItem(new Item("xx", 3));
+       b->addItem(new Item("yy", 4));
 	c = new Room("Main Hub");
 	d = new Room("Filtration Room");
 	e = new Room("Lab");
