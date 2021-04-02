@@ -18,7 +18,7 @@ private:
     
   public :
   
-  void typePrint(string text);
+  void typePrint();
 };
 
 #endif
