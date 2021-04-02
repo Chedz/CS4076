@@ -18,22 +18,42 @@ void ZorkUL::createRooms()  {
 
 	a = new Room("Docking Hatch");
        a->addItem(new Item("Hose", 200));
-       a->addItem(new Item("Sarahs Space Suit",500));
-       a->addItem(new Item("Jacks Space Suit", 500));
-       a->addItem(new Item("Adams Space Suit", 500));
+       a->addItem(new Item("Sarah's Space Suit",500));
+       a->addItem(new Item("Jack's Space Suit", 500));
+       a->addItem(new Item("Adam's Space Suit", 500));
        a->addItem(new Item("Clamps", 100));
        a->addItem(new Item("Keycard", 5));
 	
         b = new Room("Kitchen");
-       b->addItem(new Item("xx", 3));
-       b->addItem(new Item("yy", 4));
+	// no items in kitchen 
 	c = new Room("Main Hub");
+	c->addItem(new Item("Override Keycard", 5));
+	
 	d = new Room("Filtration Room");
+	d->addItem(new Item("Canister of Oxygen", 250));
+	d->addItem(new Item("Canister of Water", 300));
+	d->addItem(new Item("Canister of Carbon Dioxide", 250));
+	d->addItem(new Item("Canister of Helium", 250));
+	d->addItem(new Item("Air filters", 10));
+	
 	e = new Room("Lab");
+	// no items in lab
+	
 	f = new Room("Maintenance");
+	f->addItem(new Item("Copper Wire", 10));
+	f->addItem(new Item("Nail", 5));
+	f->addItem(new Item("Hammer", 15));
+	f->addItem(new Item("Battery", 25));
+	f->addItem(new Item("Screwdriver", 15));
+	f->addItem(new Item("Cloth", 5));
+	f->addItem(new Item("Tool Chest", 250));
+	
+	
 	g = new Room("Gym");
+	// no items in gym
 	h = new Room("Sleeping Quarters");
-   
+        // no items in sleeping quarters 
+	
 
 //             (N, E, S, W)
     a->setExits(b, NULL, NULL, NULL);
