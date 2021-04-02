@@ -25,6 +25,7 @@ public:
 	ZorkUL();
 	void play();
 	string go(string direction);
+	string userName;
 };
 
 #endif /*ZORKUL_H_*/
