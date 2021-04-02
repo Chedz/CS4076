@@ -37,7 +37,7 @@ void ZorkUL::createRooms()  {
 	d->addItem(new Item("Air filters", 10));
 	
 	e = new Room("Lab");
-	// no items in lab
+        e->addItem(new Item(" Sleeping Quarters Keycard", 5));
 	
 	f = new Room("Maintenance");
 	f->addItem(new Item("Copper Wire", 10));
@@ -50,7 +50,7 @@ void ZorkUL::createRooms()  {
 	
 	
 	g = new Room("Gym");
-	// no items in gym
+	g->addItem(new Item(" Sleeping Quarters Keycard", 5));
 	h = new Room("Sleeping Quarters");
         // no items in sleeping quarters 
 	
