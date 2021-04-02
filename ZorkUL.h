@@ -5,6 +5,7 @@
 #include "Parser.h"
 #include "Room.h"
 #include "item.h"
+#include "Output.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -18,8 +19,9 @@ private:
 	bool processCommand(Command command);
 	void printHelp();
 	void goRoom(Command command);
-    void createItems();
-    void displayItems();
+        void createItems();
+        void displayItems();
+	void typePrint();
 
 public:
 	ZorkUL();
