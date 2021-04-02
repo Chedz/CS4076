@@ -8,13 +8,10 @@
 
 
 using namespace std;
-using std::vector;
+
 
 class Output {
 
-private:
-	
-  vector<string> textBlocks;
     
   public :
   
