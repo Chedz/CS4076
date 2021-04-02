@@ -93,9 +93,12 @@ void ZorkUL::play() {
 }
 
 void ZorkUL::printWelcome() {
+	int openingText = 1;
 	cin  << userName;
-	cout << introText->typePrint() << endl;
+	cout << "Welcome " << username << " let the challenge begin" << endl;
 	cout << "info for help"<< endl;
+	cout << ******************************************** << endl;
+	cout << typePrint(openingText) << endl;
 	cout << endl;
 	cout << currentRoom->longDescription() << endl;
 }
