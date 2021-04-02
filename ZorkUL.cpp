@@ -93,6 +93,7 @@ void ZorkUL::play() {
 }
 
 void ZorkUL::printWelcome() {
+	cin  << userName;
 	cout << introText->typePrint() << endl;
 	cout << "info for help"<< endl;
 	cout << endl;
