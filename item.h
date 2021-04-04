@@ -7,7 +7,7 @@
 using namespace std;
 
 class Item {
-private:
+protected:
 	string description;
 	string longDescription;
 	int weightGrams;
@@ -25,6 +25,23 @@ public:
 	void setValue(float value);
 	int getWeaponCheck();
 	void setWeaponCheck(int weaponCheck);
+    virtual void useItem(int id) = 0;     //virtual function, each item use will be different depending on the item
+};
+
+//Derived classes
+class UsableItem: public Item {
+   private:
+    int id; //use friendship to access
+
+   public:
+        UsableItem(int id, string description, int inWeight, float inValue);
+        UsableItem (int id, string description);
+        void useItem(int id);
+};
+
+class NonUsableItem: public Item {
+   public:
+      //void useItem(int id); //nonusable item by it's name, cannot be used
 };
 
 #endif /*ITEM_H_*/

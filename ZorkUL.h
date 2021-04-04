@@ -23,6 +23,7 @@ private:
 
 public:
 	ZorkUL();
+    void startGame();
 	void play();
 	string go(string direction);
 };

@@ -41,10 +41,16 @@ Room* Room::nextRoom(string direction) {
 				// part of the "pair" (<string, Room*>) and return it.
 }
 
-void Room::addItem(Item *inItem) {
+template<typename T>
+void Room::addItem(T inItem) {
     //cout <<endl;
     //cout << "Just added" + inItem->getLongDescription();
-    itemsInRoom.push_back(*inItem);
+    itemsInRoom.push_back(inItem->getShortDescription);
+    if(inItem.id < 10){                             //NOTE: !!!!!! 10 should be changed to reflect the amount of usableItems finally created in game
+        usableItemsInRoom.push_back(inItem);
+    }else{
+        nonUsableItemsInRoom.push_back(inItem);
+    }
 }
 
 string Room::displayItem() {
@@ -56,7 +62,7 @@ string Room::displayItem() {
     else if (itemsInRoom.size() > 0) {
        int x = (0);
         for (int n = sizeItems; n > 0; n--) {
-            tempString = tempString + itemsInRoom[x].getShortDescription() + "  " ;
+            tempString = tempString + itemsInRoom[x] + "  " ;
             x++;
             }
         }
@@ -76,10 +82,10 @@ int Room::isItemInRoom(string inString)
     else if (itemsInRoom.size() > 0) {
        int x = (0);
         for (int n = sizeItems; n > 0; n--) {
-            // compare inString with short description
-            int tempFlag = inString.compare( itemsInRoom[x].getShortDescription());
+            // compare inString with item name (item.description)
+            int tempFlag = inString.compare( itemsInRoom[x]);
             if (tempFlag == 0) {
-                itemsInRoom.erase(itemsInRoom.begin()+x);
+                itemsInRoom.erase(itemsInRoom.begin()+x); // NOTE: !!! add functionality to remove from either vector list storing item objects.
                 return x;
             }
             x++;

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/GameWindow/Rooms">
+        <file>Hatch.png</file>
+    </qresource>
+    <qresource prefix="/GameWindow/Map">
+        <file>ISS_Map_Frame.PNG</file>
+    </qresource>
+</RCC>
