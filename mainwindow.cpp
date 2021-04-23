@@ -5,35 +5,26 @@
 #include <QtCore>
 #include <QPixmap>
 #include <QDebug>
+#include <QApplication>
 
 
 #include "arrowpad.h"
 #include "mainwindow.h"
+#include "ZorkUL.h"
+
+QString consoleVal = "";
 
 
-MainWindow::MainWindow()
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
 
     QGridLayout *layout = new QGridLayout;
-   // QHBoxLayout *hlayout = new QHBoxLayout;
+
     ArrowPad *arrowPad = new ArrowPad;
-
-   // QTextBrowser *console = new QTextBrowser();
-
-
-/**
-        QTextStream out(stdout, QIODevice::WriteOnly);
-        QString coutLine ="testing123!!";
-        //while (stream.readLineInto(&coutLine)) {
-            //QTextEdit::append(coutLine, console);
-         //  console->setText(coutLine);
-      //  }
-        out << coutLine;
-**/
 
 
     QTextBrowser *console = new QTextBrowser();
-    console->setText("console");
+    console->setText(consoleVal);
 
     QTextBrowser *currentRoom = new QTextBrowser();
     currentRoom->setText("Current Room");
@@ -41,9 +32,9 @@ MainWindow::MainWindow()
     QTextBrowser *inventory = new QTextBrowser();
     inventory->setText("Inventory");
 
-    QPushButton *button1 = new QPushButton("one");
-    QPushButton *button2 = new QPushButton("two");
-    QPushButton *button3 = new QPushButton("three");
+    QPushButton *button1 = new QPushButton("info", this);
+    QPushButton *button2 = new QPushButton("put");
+    QPushButton *button3 = new QPushButton("take");
 
 
     QLabel *picLabel = new QLabel();
@@ -70,7 +61,9 @@ MainWindow::MainWindow()
     QWidget *window = new QWidget();
     window->setLayout(layout);
     setCentralWidget(window);
-    qDebug() << "Program Running";
+
+
+    connect(button1, &QPushButton::released, this, &MainWindow::handleButton);
 
     //exit code
     exitAct = new QAction(tr("E&xit"), this);
@@ -82,3 +75,27 @@ MainWindow::MainWindow()
 
 }
 
+void MainWindow::handleButton(){
+
+    //QMessageBox::information(this, "Info", "Tip: ");
+   //add in functionality for button here
+}
+
+//Setter
+void setConsole(QString s) {
+
+      //consoleVal.append(s); //append instead of reset to keep track of previouse output
+    //void QTextEdit::append( const QString & text );
+   // console->append(s);
+    consoleVal.append(s);
+   // console.repaint();
+   // console->append(s);
+    //console->setText();
+    //qApp->processEvents();
+   // console->reload();
+}
+
+    // Getter
+QString getConsole() {
+      return consoleVal;
+    }

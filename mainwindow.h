@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -21,8 +22,14 @@ class MainWindow : public QMainWindow
 //! [1]
 
 public:
-    MainWindow();
+    explicit MainWindow(QWidget *parent = nullptr);
+    QString consoleVal;
     QString updateConsole();
+    void setConsole(QString);
+    QString getConsole();
+
+private slots:
+    void handleButton();
 
 private:
     ArrowPad *arrowPad;

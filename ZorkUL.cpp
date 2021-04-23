@@ -1,11 +1,15 @@
 #include <iostream>
 #include "mainwindow.h"
+#include <QDebug>
 
 using namespace std;
 #include "ZorkUL.h"
+ZorkUL temp;
+
+void setConsole(QString s);
 
 void startGame() {
-	ZorkUL temp;
+    //ZorkUL temp;
 	temp.play();
     //return 0;
 }
@@ -128,9 +132,10 @@ bool ZorkUL::processCommand(Command command) {
             cout << "item is not in room" << endl;
         else
             cout << "item is in room" << endl;
-            cout << "index number " << + location << endl;
-            cout << endl;
-            cout << currentRoom->longDescription() << endl;
+
+           cout << "index number " << + location << endl;
+           cout << endl;
+           cout << currentRoom->longDescription() << endl;
         }
     }
 
@@ -194,6 +199,24 @@ string ZorkUL::go(string direction) {
 	else
 	{
 		currentRoom = nextRoom;
+        qDebug() << "string ZorkUL::go(string direction) is running";
 		return currentRoom->longDescription();
 	}
+}
+
+QString goNorth(){
+  // return temp.go("north");
+   // QString qstr = QString::fromStdString(temp.go("north"));
+    //qDebug() << qstr;
+  //  setConsole(qstr);
+    return QString::fromStdString(temp.go("north"));
+}
+QString goSouth(){
+  return QString::fromStdString(temp.go("south"));
+}
+QString goEast(){
+   return QString::fromStdString(temp.go("east"));
+}
+QString goWest(){
+   return QString::fromStdString(temp.go("west"));
 }

@@ -25,7 +25,12 @@ public:
 	ZorkUL();
     void startGame();
 	void play();
-	string go(string direction);
+    string go(string direction);
+    void goNorth();
+    string goSouth();
+    string goEast();
+    string goWest();
+
 };
 
 #endif /*ZORKUL_H_*/

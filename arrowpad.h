@@ -18,6 +18,12 @@ class ArrowPad : public QWidget
 public:
     ArrowPad(QWidget *parent = 0);
 
+private slots:
+    void handleNorth();
+    void handleSouth();
+    void handleEast();
+    void handleWest();
+
 private:
     QPushButton *upButton;
     QPushButton *downButton;
